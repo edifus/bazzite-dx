@@ -13,16 +13,19 @@ dnf5 install -y \
     atuin \
     bat \
     bcc \
+    blueprint-compiler \
     bpftop \
     bpftrace \
     ccache \
     colordiff \
     fd-find \
     flatpak-builder \
+    gettext \
     gh \
     git-delta \
     gtk4-devel \
     htop \
+    libadwaita-devel \
     nicstat \
     numactl \
     podman-machine \
