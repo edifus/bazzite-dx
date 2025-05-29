@@ -17,15 +17,14 @@ dnf5 install -y \
     bpftrace \
     ccache \
     colordiff \
-    eza \
     fd-find \
     flatpak-builder \
     gh \
     git-delta \
+    gtk4-devel \
     htop \
     nicstat \
     numactl \
-    nvme-cli \
     podman-machine \
     podman-tui \
     python3-ramalama \
@@ -33,9 +32,18 @@ dnf5 install -y \
     rbw \
     rclone \
     restic \
+    rust-eza \
     sysprof \
     tiptop \
+    zig \
     zsh
+
+# build and install ghostty
+git clone https://github.com/ghostty-org/ghostty
+cd ghostty
+git checkout v1.1.3
+zig build -p /usr/local -Doptimize=ReleaseFast
+
 
 dnf5 install --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y \
     ublue-setup-services
