@@ -42,7 +42,8 @@ dnf5 install -y \
 
 # download and install eza (ls replacement)
 EZA_VERSION="0.21.3"
-wget -c https://github.com/eza-community/eza/releases/download/v${EZA_VERSION}/eza_x86_64-unknown-linux-musl.tar.gz -O - | tar -C /var/usrlocal/bin -xzvf
+wget -c https://github.com/eza-community/eza/releases/download/v${EZA_VERSION}/eza_x86_64-unknown-linux-musl.tar.gz -O - | tar -C /var/usrlocal/bin -xzv
+chmod +x /var/usrlocal/bin/eza
 
 # build and install ghostty
 git clone https://github.com/ghostty-org/ghostty
