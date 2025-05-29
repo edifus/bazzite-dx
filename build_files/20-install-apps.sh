@@ -42,7 +42,7 @@ dnf5 install -y \
 git clone https://github.com/ghostty-org/ghostty
 cd ghostty
 git checkout v1.1.3
-zig build -p /usr/local -Doptimize=ReleaseFast
+zig build -p /usr -Doptimize=ReleaseFast
 
 
 dnf5 install --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y \
