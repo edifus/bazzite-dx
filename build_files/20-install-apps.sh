@@ -40,17 +40,17 @@ dnf5 install -y \
     zig \
     zsh
 
-mkdir -p /var/usrlocal/{bin,share}
+mkdir -p /usr/{bin,share}
 # download and install eza (ls replacement)
 EZA_VERSION="0.21.3"
-wget -c https://github.com/eza-community/eza/releases/download/v${EZA_VERSION}/eza_x86_64-unknown-linux-musl.tar.gz -O - | tar -C /var/usrlocal/bin -xzv
-chmod +x /var/usrlocal/bin/eza
+wget -c https://github.com/eza-community/eza/releases/download/v${EZA_VERSION}/eza_x86_64-unknown-linux-musl.tar.gz -O - | tar -C /usr/bin -xzv
+chmod +x /usr/bin/eza
 
 # build and install ghostty
 git clone https://github.com/ghostty-org/ghostty
 cd ghostty
 git checkout v1.1.3
-zig build -p /var/usrlocal -Doptimize=ReleaseFast
+zig build -p /usr -Doptimize=ReleaseFast
 
 dnf5 install --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y \
     ublue-setup-services
